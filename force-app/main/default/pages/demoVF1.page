@@ -1,0 +1,35 @@
+<apex:page standardController="Account">
+    <apex:form >
+    <table border="1">
+        <tr>
+        	<td>Account Name</td>
+            <td>
+            <apex:inputField value="{!Account.Name}"/>
+            </td>
+        </tr>
+        
+        <tr>
+        	<td>Account Phone</td>
+            <td>
+            <apex:inputField value="{!Account.Phone}"/>
+            </td>
+        </tr>
+        
+         <tr>
+        	<td>Account Rating</td>
+            <td>
+            <apex:inputField value="{!Account.Rating}"/>
+            </td>
+        </tr>
+        
+         <tr>
+            <td>
+            <apex:commandButton value="Save" action="{!save}" />
+            </td>
+             <td>
+            <apex:commandButton value="Cancel" action="{!Cancel}" />
+            </td>
+        </tr>
+        </table>
+    </apex:form>
+</apex:page>

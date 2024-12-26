@@ -1,0 +1,58 @@
+/* Main Menu Styles */
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-item-container {
+    padding: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for main menu items */
+.menu-item:hover .menu-item-container {
+    background-color: #d9f0fc; /* Lighter blue for main menu hover */
+}
+
+/* Submenu Styles */
+.submenu {
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.submenu-item {
+    padding: 0.3rem 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect for submenu items */
+.submenu-item:hover {
+    background-color: #e6e6e6; /* Light gray for submenu hover */
+    border-radius: 4px;
+}
+
+/* Shared styles */
+.menu-text, .submenu-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+}
+
+.menu-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Chevron styles */
+.chevron-bottom {
+    margin-top: 2rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.chevron-bottom:hover {
+    background-color: #d9f0fc; /* Match main menu hover */
+    border-radius: 50%;
+}

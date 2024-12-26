@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Barcode Generator" icon-name="utility:barcode">
+        <div class="slds-p-around_medium">
+            <lightning-input 
+                label="Enter Patient ID" 
+                type="text" 
+                value={patientId} 
+                onchange={handleInputChange}>
+            </lightning-input>
+
+            <div class="barcode-container">
+                <canvas lwc:dom="manual" class="barcode"></canvas>
+            </div>
+
+            <lightning-button 
+                label="Generate Barcode" 
+                variant="brand" 
+                onclick={generateBarcode}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

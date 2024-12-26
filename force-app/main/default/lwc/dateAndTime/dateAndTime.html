@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Greeting Message" icon-name="utility:clock">
+        <div class="slds-m-around_medium">
+            <button class="slds-button slds-button_brand" onclick={handleClick}>Display Message</button>
+            <template if:true={currentDateTime}>
+            <p style="padding-top: 15px;">Current Date and Day: {currentDateTime}</p>
+            <p>{greetingMessage}</p>
+            </template>
+        </div>        
+    </lightning-card>
+</template>

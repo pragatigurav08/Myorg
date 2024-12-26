@@ -1,0 +1,51 @@
+<template>
+    <lightning-card>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered" aria-label="Example table of Opportunities with vertical borders">
+        <thead>
+        <tr class="slds-line-height_reset">
+        <th class="" scope="col">
+        <div class="slds-truncate" title="Sl.no">SL.No</div>
+        </th>
+        <th class="" scope="col">
+        <div class="slds-truncate" title="Name">Name</div>
+        </th>
+        <th class="" scope="col">
+        <div class="slds-truncate" title="Phone">Phone</div>
+        </th>
+        <th class="" scope="col">
+        <div class="slds-truncate" title="Email">Email</div>
+        </th>
+        <th class="" scope="col">
+        <div class="slds-truncate" title="Action">Action</div>
+        </th>
+        </tr>
+        </thead>
+        <tbody>
+            <template for:each={contacts} for:item="contact">
+                <tr key={contact.Id}>
+        <td data-label="Name">
+            <div class="slds-truncate" title="Sl.no">{contact.SNo}</div>
+        </td>
+        <td data-label="Name">
+        <div class="slds-truncate" title="Pragati">{contact.Name}</div>
+        </td>
+        <td data-label="Phone">
+            <div class="slds-truncate" title="4/14/2015">{contact.HomePhone}</div>
+            </td>
+        <td data-label="Email">
+        <div class="slds-truncate" title="4/14/2015">{contact.Email}</div>
+        </td>
+        <td data-label="Action">
+        <div class="slds-truncate" title="icon">
+            
+                <lightning-icon icon-name="utility:delete" size="xx-small" variant="border-filled" data-id={contact.Id} onclick={handleDelete}></lightning-icon>
+            
+        </div>
+        </td>
+        </tr>
+    </template>
+</tbody>        
+        </table>
+    </lightning-card>
+    11345
+</template>

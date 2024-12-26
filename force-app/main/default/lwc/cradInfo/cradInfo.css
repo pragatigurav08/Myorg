@@ -1,0 +1,33 @@
+/* .cardStyle{
+    border: 2px solid black;
+}*/
+.borderStyling{
+    margin-top: 6px;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgb(224, 219, 219);
+} 
+
+
+.custom-card {
+
+    border: 1px solid #d8dde6;
+    border-radius: 0.25rem;
+    background-color: #f4f6f9;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+.card-header {
+    background-color: #dcb6c6;
+    padding: 0.5rem;
+    font-weight: bold;
+    border-bottom: 1px solid #d8dde6;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+.slds-card__header-title {
+    font-weight: bold;
+}
+.slds-m-left_xx-small {
+    margin-left: 0.25rem;
+}

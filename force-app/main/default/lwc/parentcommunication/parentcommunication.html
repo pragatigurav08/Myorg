@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="child to parent communication" icon-name="utility:user">
+        <div class="slds-var-m-around_medium">
+            Message from Child:{message}
+            <br>
+           <p style="color: crimson;">Count of Clicks:{count}</p>
+            <c-childcomponentcommunication lwc:ref="child" onincreasecount={handleEventChange}></c-childcomponentcommunication>
+            
+        </div>
+    </lightning-card>
+</template>

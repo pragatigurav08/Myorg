@@ -1,0 +1,187 @@
+<template>
+    <lightning-card>
+        <div class="slds-box box">
+            <div class="slds-page-header">
+                <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                <div class="slds-media__figure">
+                <span class="slds-icon_container slds-icon-standard-opportunity" title="opportunity">
+                    <lightning-icon icon-name="standard:opportunity" size="medium"></lightning-icon>
+                <span class="slds-assistive-text">opportunity</span>
+                </span>
+                </div>
+                <div class="slds-media__body">
+                <div class="slds-page-header__name">
+                <div class="slds-page-header__name-title">
+                <h1>
+                <span class="slds-page-header__title slds-truncate" title="Rohde Corp - 80,000 Widgets">Manage</span>
+                </h1>
+                </div>
+                </div>
+                <p class="slds-page-header__name-meta">Opportunities</p>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+       <div style="margin-top: 10px;">
+        <p style="background-color: rgb(116, 116, 243); width:24rem;">Manage the health of your partner by keeping the data up-to-date</p>
+       </div>
+<!-- section 3 -->
+       <div style="padding-top: 15px;">
+       <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+            <div class="slds-box box-sizing" style="width: 11rem;">
+                <p class="fontcolor"><b>185</b></p>
+                <p style="color: blue;">All-Last and Current FY</p>
+            </div>
+        </div>
+        <div class="slds-col">
+            <div class="slds-box box-sizing" >
+                <p class="fontcolor" style="padding-left: 25px;"><b>864k</b></p>
+                <p style="color: blue;padding-left: 8px;">Total ACV YTD</p>
+            </div>
+        </div>
+        <div class="slds-col">
+            <div class="slds-box box-sizing">
+                <p class="fontcolor" style="padding-left: 20px;"><b>187K</b></p>
+                <P style="color: blue;padding-left: 8px;">Total ACV QTD</P>
+            </div>
+        </div>
+        <div class="slds-col">
+            <div class="slds-box box-sizing">
+                <p class="fontcolor"><b>40</b></p>
+                <P style="color: blue;padding-left: 8px;padding-left: 40px;">Open</P>
+            </div>
+        </div>
+        <div class="slds-col">
+            <div class="slds-box box-sizing" style="width: 11rem;">
+                <p class="fontcolor"><b>10</b></p>
+                <p style="color: blue;">Top 10 Won Deals YTD</p>
+            </div>
+            </div>
+            <div class="slds-col" style=" margin-right:20rem;">
+                <div class="slds-box box-sizing" style="width: 12rem;">
+                    <p class="fontcolor"><b>79</b></p>
+                    <p style="color: blue;">Closed-Last & Current FY</p>
+                </div>
+            </div>
+
+        </div> 
+    </div> 
+    <!-- section 4         -->
+    <div class="slds-box opp-box">
+        <div class="slds-grid slds-grid_vertical">
+            <div class="slds-col" style=" height: 4rem; padding-top: 10px;padding-left: 5px;">
+                <div class="slds-grid">
+                    <div>
+                      <p style="font-size: 15px;margin-bottom: 4px;">Opportunities</p>
+                      <p>185 items. Sorted by Closed-Date. Filtered by Lead sales Partner Role,All-Last & Current FY,Created Date</p>
+                    </div>
+                    <div class="slds-col_bump-left">
+                        <lightning-layout-item flexibility="auto" padding="around-small">
+                            <div class="search-container">
+                                <input type="text" class="search-box" placeholder="Search..." value={searchTerm} oninput={handleSearchChange}>     
+                            </div>
+                        </lightning-layout-item>
+                      </div>
+                      <div>
+                        <lightning-icon icon-name="utility:download" size="small" alternative-text="Search" onclick={handleSearch}></lightning-icon>
+                      </div>
+                      <div>
+                        <lightning-icon icon-name="utility:filterList" size="small" alternative-text="Filter" onclick={handleFilter}></lightning-icon>
+                      </div>
+                </div>
+            </div>
+            <div class="slds-col">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered" aria-label="Example table of Opportunities with vertical borders">
+                    <thead>
+                    <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                    <div class="slds-truncate" title="Opportunity Name">Opportunity Name</div>
+                    </th>
+                    <th class="" scope="col">
+                    <div class="slds-truncate" title="Account Name">Account Name</div>
+                    </th>
+                    <th class="" scope="col">
+                    <div class="slds-truncate" title="Close Date">Close Date</div>
+                    </th>
+                    <th class="" scope="col">
+                    <div class="slds-truncate" title="Stage">Stage</div>
+                    </th>
+                    <th class="" scope="col">
+                    <div class="slds-truncate" title="Confidence">Confidence</div>
+                    </th>
+                    <th class="" scope="col">
+                    <div class="slds-truncate" title="Amount">Amount</div>
+                    </th>
+                    <th class="" scope="col">
+                    <div class="slds-truncate" title="Contact">Contact</div>
+                    </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="slds-hint-parent">
+                    <th data-label="Opportunity Name" scope="row">
+                    <div class="slds-truncate" title="Cloudhub">
+                    <a href="#" tabindex="-1">Cloudhub</a>
+                    </div>
+                    </th>
+                    <td data-label="Account Name">
+                    <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                    </td>
+                    <td data-label="Close Date">
+                    <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                    </td>
+                    <td data-label="Prospecting">
+                    <div class="slds-truncate" title="Prospecting">Prospecting</div>
+                    </td>
+                    <td data-label="Confidence">
+                    <div class="slds-truncate" title="20%">20%</div>
+                    </td>
+                    <td data-label="Amount">
+                    <div class="slds-truncate" title="$25k">$25k</div>
+                    </td>
+                    <td data-label="Contact">
+                    <div class="slds-truncate" title="jrogers@cloudhub.com">
+                    <a href="#" tabindex="-1">jrogers@cloudhub.com</a>
+                    </div>
+                    </td>
+                    </tr>
+                    <tr class="slds-hint-parent">
+                    <th data-label="Opportunity Name" scope="row">
+                    <div class="slds-truncate" title="Cloudhub + Anypoint Connectors">
+                    <a href="#" tabindex="-1">Cloudhub + Anypoint Connectors</a>
+                    </div>
+                    </th>
+                    <td data-label="Account Name">
+                    <div class="slds-truncate" title="Cloudhub">Cloudhub</div>
+                    </td>
+                    <td data-label="Close Date">
+                    <div class="slds-truncate" title="4/14/2015">4/14/2015</div>
+                    </td>
+                    <td data-label="Prospecting">
+                    <div class="slds-truncate" title="Prospecting">Prospecting</div>
+                    </td>
+                    <td data-label="Confidence">
+                    <div class="slds-truncate" title="20%">20%</div>
+                    </td>
+                    <td data-label="Amount">
+                    <div class="slds-truncate" title="$25k">$25k</div>
+                    </td>
+                    <td data-label="Contact">
+                    <div class="slds-truncate" title="jrogers@cloudhub.com">
+                    <a href="#" tabindex="-1">jrogers@cloudhub.com</a>
+                    </div>
+                    </td>
+                    </tr>
+                    </tbody>
+                    </table>
+            </div>
+            </div>
+        </div>
+    </div>
+        prag
+    </lightning-card>
+</template>

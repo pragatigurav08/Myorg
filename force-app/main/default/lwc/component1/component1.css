@@ -1,0 +1,59 @@
+.contact-row {
+    margin-bottom: 10px;
+}
+
+.gridAlignment {
+    border-bottom: 1px solid black;
+    height: 35px;
+}
+
+.view {
+    background-color: #d3c1ee;
+    width: 8rem;
+    width: 40rem;
+    margin-left: 12rem;
+}
+
+.icon{
+    background-color: #d3c1ee;
+    border-color: #d5c1e3;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.button-section {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+
+.slds-m-top_medium.slds-m-bottom_medium {
+    text-align: center;
+
+}
+
+.slds-table thead th{
+    background-color: #b3b3b3;
+}
+.table-input {
+    border: none; /* Remove the entire border */
+    border-bottom: 1px solid #121212; /* Only show the bottom border */
+    background-color: transparent; /* Ensure transparent background */
+    width: 100%; /* Make input take up full width of the cell */
+    padding: 0.25rem 0; /* Adjust padding for spacing */
+    font-size: 1rem; /* Standardize font size */
+    text-align: left; /* Align text to the left */
+}
+
+/* Focus State for Input Fields */
+.table-input:focus {
+    outline: none; /* Remove the default focus outline */
+    border-bottom: 2px solid #1b75bb; /* Thicker underline for focus state */
+}
+
+
+.custom-input::placeholder {
+    color: #9b9b9b; /* Optional: Placeholder color */
+}

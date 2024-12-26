@@ -1,0 +1,31 @@
+.lightning-icon{
+    margin-left: 6px;
+    padding-bottom: 8px;
+    padding: 6px;
+    --sds-c-icon-color-foreground-default: white;
+}
+.iconmessage{
+    padding-bottom: 8px;
+    border-top-width: 0px;
+    margin-top: 2px;
+    padding: 6px;
+    --sds-c-icon-color-foreground-default: white;
+}
+.icon-color{    
+    --sds-c-icon-color-foreground-default: white;
+}
+.alert-icon{
+    padding-bottom: 8px;
+    padding-left: 4px;
+    padding: 6px;
+    --sds-c-icon-color-foreground-default: white;
+}
+.divpara{
+    padding-right:58rem;
+    color: white;
+}
+.slds-box{
+    height: 8rem;
+    margin-left: 10px;
+    margin-right: 10px;
+}

@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="User Details" icon-name="utility:user">
+        <div class="slds-m-around_medium">
+            <template if:true={userData.data}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={userData.data}
+                    columns={columns}
+                    onrowaction={handleRowAction}>
+                </lightning-datatable>
+            </template>
+            <template if:true={userData.error}>
+                <p>{userData.error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

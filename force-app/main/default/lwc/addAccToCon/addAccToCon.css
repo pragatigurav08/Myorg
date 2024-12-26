@@ -1,0 +1,15 @@
+.slds-modal__container {
+    width: 50% !important;
+}
+ 
+.slds-m-around_medium {
+    margin: 1rem;
+}
+ 
+.slds-m-top_medium {
+    margin-top: 1rem;
+}
+ 
+.slds-m-right_small {
+    margin-right: 0.5rem;
+}

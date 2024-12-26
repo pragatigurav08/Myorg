@@ -1,0 +1,171 @@
+<template>
+    <lightning-card>
+        <!-- Contacts Section -->
+        <div class="slds-grid slds-grid_vertical view">
+            <div class="slds-col gridAlignment" onclick={toggleContactsVisibility}>
+                <span>Contacts</span>
+                <lightning-button-icon
+                    icon-name={contactsIconName}
+                    alternative-text="Toggle Contacts"
+                    class="slds-float_right slds-button_icon-border-filled icon">
+                </lightning-button-icon>
+            </div>
+
+            <template if:true={areContactsVisible}>
+                <lightning-button label="Add" icon-name="utility:add" onclick={addContactRow}></lightning-button>
+
+                <div class="slds-p-around_medium">
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead>
+                            <tr class="slds-text-title_caps">
+                                <th scope="col">
+                                    <div class="slds-truncate" title="First Name">First Name</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Last Name">Last Name</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Email">Email</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={contacts} for:item="contact" for:index="index">
+                                <tr key={contact.id}>
+                                    <td>
+                                        <input class="table-input" label="First Name" value={contact.FirstName} data-id={index} data-field="FirstName" data-section="contact" onchange={handleInputChange}></input>
+                                    </td>
+                                    <td>
+                                        <input class="table-input" label="Last Name" value={contact.LastName} data-id={index} data-field="LastName" data-section="contact" onchange={handleInputChange}></input>
+                                    </td>
+                                    <td>
+                                        <input class="table-input" label="Email" value={contact.Email} data-id={index} data-field="Email" data-section="contact" onchange={handleInputChange}></input>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="slds-m-top_medium slds-m-bottom_medium button-section">
+                    <lightning-button label="Save All" variant="brand" onclick={handleSaveAllContacts}></lightning-button>
+                    <lightning-button label="Discard All" variant="destructive" onclick={handleDiscardAllContacts}></lightning-button>
+                </div>
+            </template>
+        </div>
+
+        <!-- Opportunities Section -->
+        <div class="slds-grid slds-grid_vertical view">
+            <div class="slds-col gridAlignment" onclick={toggleOpportunitiesVisibility}>
+                <span>Opportunities</span>
+                <lightning-button-icon
+                    icon-name={opportunitiesIconName}
+                    alternative-text="Toggle Opportunities"
+                    class="slds-float_right slds-button_icon-border-filled icon">
+                </lightning-button-icon>
+            </div>
+
+            <template if:true={areOpportunitiesVisible}>
+                <lightning-button label="Add" icon-name="utility:add" onclick={addOpportunityRow}></lightning-button>
+
+                <div class="slds-p-around_medium">
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead>
+                            <tr class="slds-text-title_caps">
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Opportunity Name">Opportunity Name</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Close Date">Close Date</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Stage">Stage</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={opportunities} for:item="opportunity" for:index="index">
+                                <tr key={opportunity.id}>
+                                    <td>
+                                        <input  class="table-input" label="Opportunity Name" value={opportunity.Name} data-id={index} data-field="Name" data-section="opportunity" onchange={handleInputChange}></input>
+                                    </td>
+                                    <td>
+                                        <input  class="table-input" type="date" label="Close Date" value={opportunity.CloseDate} data-id={index} data-field="CloseDate" data-section="opportunity" onchange={handleInputChange}></input>
+                                    </td>
+                                    <td>
+                                        <input  class="table-input" label="Stage" value={opportunity.StageName} data-id={index} data-field="StageName" data-section="opportunity" onchange={handleInputChange}></input>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="slds-m-top_medium slds-m-bottom_medium button-section">
+                    <lightning-button label="Save All" variant="brand" onclick={handleSaveAllOpportunities}></lightning-button>
+                    <lightning-button label="Discard All" variant="destructive" onclick={handleDiscardAllOpportunities}></lightning-button>
+                </div>
+            </template>
+        </div>
+
+        <!-- Cases Section -->
+        <div class="slds-grid slds-grid_vertical view">
+            <div class="slds-col gridAlignment" onclick={toggleCasesVisibility}>
+                <span>Cases</span>
+                <lightning-button-icon
+                    icon-name={casesIconName}
+                    alternative-text="Toggle Cases"
+                    class="slds-float_right slds-button_icon-border-filled icon">
+                </lightning-button-icon>
+            </div>
+
+            <template if:true={areCasesVisible}>
+                <lightning-button label="Add" icon-name="utility:add" onclick={addCaseRow}></lightning-button>
+
+                <div class="slds-p-around_medium">
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <thead>
+                            <tr class="slds-text-title_caps">
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Subject">Subject</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Case Origin">Case Origin</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Status">Status</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="Priority">Priority</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={cases} for:item="caseItem" for:index="index">
+                                <tr key={caseItem.id}>
+                                    <td>
+                                        <input   class="table-input" label="Subject" value={caseItem.Subject} data-id={index} data-field="Subject" data-section="case" onchange={handleInputChange}></input>
+                                    </td>
+                                    <td>
+                                        <input  class="table-input" label="Case Origin" value={caseItem.Origin} data-id={index} data-field="Origin" data-section="case" onchange={handleInputChange}></input>
+                                    </td>
+                                    <td>
+                                        <input  class="table-input" label="Status" value={caseItem.Status} data-id={index} data-field="Status" data-section="case" onchange={handleInputChange}></input>
+                                    </td>
+                                    <td>
+                                        <input  class="table-input" label="Priority" value={caseItem.Priority} data-id={index} data-field="Priority" data-section="case" onchange={handleInputChange}></input>
+                                    </td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="slds-m-top_medium slds-m-bottom_medium button-section">
+                    <lightning-button label="Save All" variant="brand" onclick={handleSaveAllCases}></lightning-button>
+                    <lightning-button label="Discard All" variant="destructive" onclick={handleDiscardAllCases}></lightning-button>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

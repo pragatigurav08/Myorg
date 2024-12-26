@@ -1,0 +1,24 @@
+.card{
+        height: 60px;
+        background-color: rgb(236, 236, 236);
+        padding:0;  
+    }
+    .box{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+   .box-sizing{
+    width: 9rem;
+    height: 6rem;
+   }
+   .fontcolor{
+    font-size: 22px;
+    color:rgb(45, 91, 114);
+    padding-left: 50px;
+    margin-top: 5px;
+   }
+   .opp-box{
+    padding: 0px;
+    height: 20rem;
+    margin-top: 20px;
+   }

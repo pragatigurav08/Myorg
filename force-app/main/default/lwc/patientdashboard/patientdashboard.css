@@ -1,0 +1,60 @@
+/* .custom-card {
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.custom-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+} */
+ /* Custom styles for the outer wrapper of lightning-card */
+.custom-card .slds-card__body {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.custom-card:hover .slds-card__body {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.card-1 .slds-card__body {
+    background-color: #f4f6f9;
+}
+
+.card-2 .slds-card__body {
+    background-color: #e3f2fd;
+}
+
+.card-3 .slds-card__body {
+    background-color: #fff3e0;
+}
+
+.slds-card__body {
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+.cls-space{
+    margin-left: 10px;
+    font-size: 18px;
+}
+.doc-background-color{
+    background-color: #9494fc;
+    height: 25px;
+}
+
+/* Set the background color for the doctors list header */
+.doc-background-color {
+    background-color: #2994f1; /* Salesforce blue */
+    color: black;
+    padding: 10px;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Set the background color for the table headers */
+.header-color {
+    color: black;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+}

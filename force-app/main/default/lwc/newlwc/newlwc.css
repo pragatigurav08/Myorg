@@ -1,0 +1,6 @@
+.white-utility-icon{
+    --sds-c-icon-color-foreground-default: white;
+}
+.blue-utility-icon{
+    --sds-c-icon-color-foreground-default: rgb(4, 113, 132);
+}

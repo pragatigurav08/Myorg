@@ -1,0 +1,535 @@
+<template>
+<!-- <div class="slds-grid slds-grid_align-spread custom-header slds-p-around_medium"> -->
+    <!-- Left Section: Logo and Title -->
+    <!-- <div class="slds-grid slds-grid_vertical-align-center">
+        <img src={zohobooklogo} alt="Books Logo" class="logo-image" />
+        <span class="books-title slds-m-left_small">Books</span>
+    </div> -->
+
+    <!-- Center Section: Search Input -->
+    <!-- <div class="slds-grid slds-grid_vertical-align-center center-section">
+        <lightning-icon
+            icon-name="standard:recent"
+            class="white-utility-icon custom-icon"
+            size="medium"
+            alternative-text="Recent Activities Icon">
+        </lightning-icon>
+        <div class="slds-form-element slds-m-left_small">
+            <div class="slds-form-element__control">
+                <lightning-input
+                    type="search"
+                    placeholder="Search in Customers (/)"
+                    class="search-input">
+                </lightning-input>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Right Section: Organization Info and Icons -->
+    <!-- <div class="slds-grid slds-grid_vertical-align-center slds-grid_align-end">
+        <span class="organization-text slds-m-right_medium">
+            This is a <strong>Test</strong> organization.
+        </span>
+
+        <span class="slds-text-body_small slds-m-right_medium org-text">
+            Demo Org
+        </span>
+        <lightning-icon
+            icon-name="utility:chevrondown"
+            size="xx-small"
+            class="white-utility-icon slds-m-right_medium">
+        </lightning-icon> -->
+
+        <!-- Icons with adjusted size and placement -->
+        <!-- <lightning-icon
+            icon-name="utility:add"
+            size="small"
+            class="slds-m-right_medium add-icon">
+        </lightning-icon> -->
+
+        <!-- <lightning-icon
+            icon-name="utility:people"
+            size="small"
+            class="white-utility-icon slds-m-right_small">
+        </lightning-icon> -->
+       <!-- <div style="padding-right: 20px;"><img src={PeopleIcon} alt="Add image" style="height: 20px;" /></div> 
+       <div style="padding-right: 20px;"><img src={notificationIcon} alt="Add image" style="height: 20px;" /></div>
+       <div style="padding-right: 20px;"><img src={settingsicon} alt="Add image" style="height: 20px;" /></div> -->
+
+        <!-- <lightning-icon
+            icon-name="utility:notification"
+            size="small"
+            class="white-utility-icon slds-m-right_small">
+        </lightning-icon>
+
+        <lightning-icon
+            icon-name="utility:settings"
+            size="small"
+            class="white-utility-icon slds-m-right_small">
+        </lightning-icon> -->
+
+        <!-- <div class="profile-container slds-grid slds-grid_vertical-align-center ">
+            <img src={profileImage} alt="Profile Image" class="profile-image"  />
+        </div>
+
+        <lightning-icon
+            icon-name="utility:apps"
+            size="small"
+            class="white-utility-icon slds-m-right_small">
+        </lightning-icon>
+    </div>
+</div> -->
+
+  <div class="slds-grid slds-wrap">    
+
+    <div class="slds-col slds-size_2-of-12 slds-scrollable_y sidebar-container">
+        <!-- Sidebar -->
+        <ul class={sideMenuClass}>
+            <template for:each={sideMenu} for:item="task">
+                <li 
+                    key={task.name} 
+                    class="slds-m-bottom_small menu-item" 
+                    data-name={task.name} 
+                    onclick={handleMenuClick}
+                >
+                    <div class="slds-grid" data-name={task.name} onclick={handleToggle}>
+                        <!-- Icon Column -->
+                        <div class="slds-col slds-size_1-of-5">
+                            <img src={task.iconName} alt={task.name} class="menu-icon" />
+                        </div>
+                        <!-- Name Column -->
+                        <div class="slds-col slds-size_3-of-5">
+                            <span class="text">{task.name}</span>
+                        </div>
+                        <!-- Right Icon Column -->
+                        <div class="slds-col slds-size_1-of-5" align="right">
+                            <lightning-icon icon-name={task.iconNaame} size="xx-small"></lightning-icon>
+                        </div>
+                    </div>
+                    
+                    <!-- Sub-menu -->
+                    <template if:true={task.isExpanded}>
+                        <ul>
+                            <template for:each={task.subMenu} for:item="subTask">
+                                <li key={subTask.name} class="slds-m-bottom_small slds-m-top_small submenu-item">
+                                    <div class="slds-grid">
+                                        <div class="slds-col slds-size_1-of-5"></div>
+                                        <div class="slds-col slds-size_3-of-5">
+                                            <span class="sub-item">{subTask.name}</span>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-5"></div>
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                </li>
+            </template>
+        </ul>
+
+        <!-- Chevron icon at bottom -->
+        <div class="center-icon chevron-bottom" onclick={toggleSidebarWidth}>
+            <lightning-icon icon-name="utility:chevronleft" alternative-text="Company" size="small"></lightning-icon>
+        </div>
+    </div>
+      
+      
+        
+
+  <div class="slds-col slds-size_10-of-12 slds-scrollable_y">
+
+        <!-- Main Content -->
+  <!-- <div class="main-content slds-p-around_medium"> -->
+    <lightning-card>
+        <div class="header demo" style="background-image: url('/resource/dmsHomeImage'); background-position: center;">
+        <!-- Header Section -->
+        <div class="slds-grid slds-grid_align-spread slds-p-around_small">
+            <!-- Left Side Content -->
+            <!-- Icon Section -->
+        <div class="header slds-grid slds-grid_align-start slds-m-bottom_medium">
+            <div class="slds-icon_container slds-icon-utility-company slds-m-right_small" style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; background-color: #f3f6fb; border-radius: 10%; border: 1px solid #d8dde6;">
+                <img src={helloicon} alt="Profile Image" style="width: 95%;" />
+                <!-- <lightning-icon icon-name="utility:company" alternative-text="Company" size="small" style="color: #54698d;"></lightning-icon> -->
+            </div>
+        <!-- Text Section -->
+        <div>
+            <h1 class="slds-text-heading_small" style="font-family: Arial;font-size: 18px;font-weight: 550;">Hello, Demo User</h1>
+            <p style="font-family: Arial;color: #666464;padding-top: 5px;">Demo Org</p>
+        </div>
+        </div>
+            <!-- Right Side Content -->
+            <div class="header-right slds-text-align_right">
+                <p><strong>Zoho Books India Helpline:</strong> 18005726671</p>
+                <p>Mon - Fri : 9:00 AM - 7:00 PM | Toll Free</p>
+                <p>English, हिन्दी, தமிழ், తెలుగు, മലയാളം, ಕನ್ನಡ</p>
+            </div>
+        </div>
+
+        <!-- Tab Section -->
+        <div class="tab-section slds-m-bottom_medium">
+            <lightning-tabset >
+                <lightning-tab label="Dashboard" style="font-family: Arial;font-size: medium;"></lightning-tab>
+                <lightning-tab label="Getting Started" style="font-family: Arial;font-size: medium;"></lightning-tab>
+                <lightning-tab label="Announcements" style="font-family: Arial;font-size: medium;"></lightning-tab>
+                <lightning-tab label="Recent Updates" style="font-family: Arial;font-size: medium;"></lightning-tab>
+            </lightning-tabset>
+        </div>
+        </div>
+        <!-- Card Section -->
+        <div class="slds-grid slds-wrap slds-glutters">
+            <!-- Total Receivables Card -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2" style="padding:10px" >
+            <div class=""  style="border:1px solid #8080807d;border-radius:5px">
+            <!-- Header -->
+            <div class="slds-grid slds-p-horizontal_medium slds-p-vertical_small slds-align_absolute-center">
+                <div class="slds-col slds-text-heading_small slds-truncate" style="font-size: 20px;">
+                                    Total Receivables
+                    <lightning-icon icon-name="utility:info" size="x-small" alternative-text="Info" class="slds-m-left_xx-small"></lightning-icon>
+                </div>
+                 <div class="slds-col slds-text-align_right">
+                    <img src={addIcon} alt="Add image" class="Add_image" />
+                    <a href="javascript:void(0);" class="slds-text-link"> New</a>
+                </div> 
+            </div>
+            <!-- Body -->
+            
+
+            <div class="slds-p-around_medium tbills">
+              <div class="total unpaid">
+                <!-- Total Unpaid Invoices -->
+                <div class="slds-text-title_bold slds-text-align_left" style="text-align: left;font-size: .875em;font-weight: normal;color: #7f7f8d;">
+                    <span>Total Unpaid Invoices</span>
+                    <span style="font-size: .875em;font-weight: normal;color: #7f7f8d;"> ₹372,580.05</span>
+                </div>
+            
+                <!-- Progress Bar -->
+                <div class="slds-progress-bar slds-progress-bar_large slds-m-top_small" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" role="progressbar">
+                    <span class="slds-progress-bar__value" style="background-color: #FFCC00; width: 60%;"></span>
+                    
+                </div>
+            </div>
+            </div>
+            <div class="slds-p-around_medium">
+                <!-- Current and Overdue Amounts -->
+                <div class="slds-grid slds-wrap slds-m-top_medium">
+                    <div class="slds-col slds-size_1-of-2" style="border-right: 1px solid #808080ad !important;">
+                        <span class="slds-text-title slds-text-color_default current">CURRENT</span>
+                        <p class="currenttext" style="color: #0070D2; font-weight: bold;">₹0.00</p>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2 slds-text-align_left">
+                        <span class="slds-text-title slds-text-color_default overdue">OVERDUE</span>
+                        <p class="currenttext overdu" style="color: #D72D30; font-weight: bold;">₹372,580.05</p>
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+            </div>
+            </div>
+             
+                    <!-- Total Payables Card -->
+           
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2" style="padding:10px" >
+                      <div class=""  style="border:1px solid #8080807d;border-radius:5px">
+                      <!-- Header -->
+                      <div class="slds-grid slds-p-horizontal_medium slds-p-vertical_small slds-align_absolute-center">
+                          <div class="slds-col slds-text-heading_small slds-truncate" style="font-size: 20px;">
+                            Total Payables
+                              <lightning-icon icon-name="utility:info" size="x-small" alternative-text="Info" class="slds-m-left_xx-small"></lightning-icon>
+                          </div>
+                          <div class="slds-col slds-text-align_right">
+                            <img src={addIcon} alt="Add image" class="Add_image" />
+                              <a href="javascript:void(0);" class="slds-text-link"> New</a>
+                          </div>
+                      </div>
+                      <!-- Body -->
+                      
+          
+                      <div class="slds-p-around_medium tbills">
+                        <div class="total unpaid">
+                          <!-- Total Unpaid Invoices -->
+                          <div class="slds-text-title_bold slds-text-align_center" style="text-align: left;font-size: .875em;font-weight: normal;color: #7f7f8d;">
+                              <span>Total Unpaid Bills</span>
+                              <span style="font-size: .875em;font-weight: normal;color: #7f7f8d;"> ₹249,849.46</span>
+                          </div>
+                      
+                          <!-- Progress Bar -->
+                          <div class="slds-progress-bar slds-progress-bar_large slds-m-top_small" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80" role="progressbar">
+                              <span class="slds-progress-bar__value" style="background-color: #FFCC00; width: 80%;"></span>
+                              
+                          </div>
+                      </div>
+                      </div>
+                      <div class="slds-p-around_medium">
+                          <!-- Current and Overdue Amounts -->
+                          <div class="slds-grid slds-wrap slds-m-top_medium">
+                              <div class="slds-col slds-size_1-of-2" style="border-right: 1px solid #808080ad !important;">
+                                  <span class="slds-text-title slds-text-color_default current">CURRENT</span>
+                                  <p class="currenttext" style="color: #0070D2; font-weight: bold;">₹5,836.79</p>
+                              </div>
+                              <div class="slds-col slds-size_1-of-2 slds-text-align_left">
+                                  <span class="slds-text-title slds-text-color_default overdue">OVERDUE</span>
+                                  <p  class="currenttext overdu" style="color: #D72D30; font-weight: bold;">₹244,012.67</p>
+                              </div>
+                          </div>
+                      </div>
+                      </div>
+                      </div>
+        </div>
+          <div class="slds-grid slds-wrap " style="padding-top: 2rem;">
+            <!-- Income and Expense Chart -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-around_medium">
+                <div class="custom-card">
+                    <div class="card-header">
+                        <h2>Income and Expense</h2>
+                        <p style="padding-left: 10rem; margin-left:3rem;">This Fiscal Year</p>
+                        <lightning-icon icon-name="utility:chevrondown" size="xx-small" class="slds-m-right_medium my-icon" style="margin-right: 0px;"></lightning-icon>
+                        <!-- <lightning-button-group>
+                            <lightning-button label="Accrual" variant="neutral" class="slds-m-right_xx-small"></lightning-button>
+                            <lightning-button label="Cash" variant="neutral"></lightning-button>
+                        </lightning-button-group> -->
+                    </div>
+                    <div class="slds-grid slds-grid_align-end slds-p-around_medium" style="padding-bottom: 0px;">
+                        <div class="static-label-container">
+                            <span class="static-label">Accrual</span>
+                            <span class="static-label1">Cash</span>
+                        </div>
+                    </div>
+
+                    <!-- <div class="static-bar-chart">
+                        <div class="bar" style="height: 80%;">Jan</div>
+                        <div class="bar" style="height: 90%;">Feb</div>
+                        <div class="bar" style="height: 60%;">Mar</div>
+                        <div class="bar" style="height: 70%;">Apr</div>
+                        <div class="bar" style="height: 50%;">May</div>
+                        <div class="bar" style="height: 60%;">Jun</div>
+                        <div class="bar" style="height: 70%;">Jul</div>
+                        <div class="bar" style="height: 80%;">Aug</div>
+                        <div class="bar" style="height: 60%;">Sep</div>
+                        <div class="bar" style="height: 70%;">Oct</div>
+                        <div class="bar" style="height: 90%;">Nov</div>
+                        <div class="bar" style="height: 80%;">Dec</div>
+                    </div> -->
+
+
+
+                    <div class="chart-container">
+                        <div class="y-axis">
+                            <!-- <div>90K</div> -->
+                            <div>80K</div>
+                            <br><!-- <div>70K</div> -->
+                            <div>60K</div>
+                            <br><!-- <div>50K</div> -->
+                            <div>40K</div>
+                            <br> <!-- <div>30K</div> -->
+                            <div>20K</div>
+                            <!-- <div>10K</div> -->
+                            <div>0</div><br>
+                        </div>
+                    
+                        <div class="static-bar-chart">
+                            <div class="bar-group">
+                                <div class="bar accrual-bar" style="height: 140px;"></div>
+                                <div class="bar cash-bar" style="height: 45px;"></div>
+                                <div class="month">Jan<br>2024</div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar accrual-bar" style="height: 125px;"></div>
+                                <div class="bar cash-bar" style="height: 40px;"></div>
+                                <div class="month">Feb<br>2024</div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar accrual-bar" style="height: 70px;"></div>
+                                <div class="bar cash-bar" style="height: 30px;"></div>
+                                <div class="month">Mar<br>2024</div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar accrual-bar" style="height: 80px;"></div>
+                                <div class="bar cash-bar" style="height: 25px;"></div>
+                                <div class="month">Apr<br>2024</div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar accrual-bar" style="height: 80px;"></div>
+                                <div class="bar cash-bar" style="height: 24px;"></div>
+                                <div class="month">May<br>2024</div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar accrual-bar" style="height: 55px;"></div>
+                                <div class="bar cash-bar" style="height: 20px;"></div>
+                                <div class="month">Jun<br>2024</div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar accrual-bar" style="height: 50px;"></div>
+                                <div class="bar cash-bar" style="height: 25px;"></div>
+                                <div class="month">Jul<br>2024</div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar accrual-bar" style="height: 80px;"></div>
+                                <div class="bar cash-bar" style="height: 40px;"></div>
+                                <div class="month">Aug<br>2024</div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar accrual-bar" style="height: 60px;"></div>
+                                <div class="bar cash-bar" style="height: 25px;"></div>
+                                <div class="month">Sep<br>2024</div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar accrual-bar" style="height: 70px;"></div>
+                                <div class="bar cash-bar" style="height: 30px;"></div>
+                                <div class="month">Oct<br>2024</div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar accrual-bar" style="height: 90px;"></div>
+                                <div class="bar cash-bar" style="height: 35px;"></div>
+                                <div class="month">Nov<br>2024</div>
+                            </div>
+                            <div class="bar-group">
+                                <div class="bar accrual-bar" style="height: 110px;"></div>
+                                <div class="bar cash-bar" style="height: 35px;"></div>
+                                <div class="month">Dec<br>2024</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
+
+
+
+
+
+
+
+
+                    <!-- <div class="slds-p-around_medium">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-size_1-of-2">
+                                <span class="slds-text-title">Total Income</span>
+                                <p class="slds-text-color_success">₹7,790,083.99</p>
+                            </div>
+                            <div class="slds-col slds-size_1-of-2 slds-text-align_right">
+                                <span class="slds-text-title">Total Expenses</span>
+                                <p class="slds-text-color_error">₹2,166,598.51</p>
+                            </div>
+                        </div>
+                    </div> -->
+
+
+                    <div class="slds-p-around_medium">
+                        <div class="slds-grid slds-wrap">
+                            <!-- Legend Section -->
+                            <div class="slds-col slds-size_1-of-3 slds-text-align_left" style="border-right: 1px solid #e3e1e1;">
+                                <div class="legend">
+                                    <span class="legend-item color-1"></span> Income
+                                    <br>
+                                    <span class="legend-item color-2"></span> Expense
+                                </div>
+                            </div>
+                            <!-- Income Section -->
+                            <div class="slds-col slds-size_1-of-3 slds-text-align_left" style="padding-left: 12px;">
+                                <span class="slds-text-title" style="color: #4caf50;">Total Income</span>
+                                <p class="slds-text-color_success text-font">₹7,790,083.99</p>
+                            </div>
+                    
+                            <!-- Expenses Section -->
+                            <div class="slds-col slds-size_1-of-3 slds-text-align_left" style="padding-left:25px;">
+                                <span class="slds-text-title" style="color:#f44336">Total Expenses</span>
+                                <p class="slds-text-color_error text-font">₹2,166,598.51</p>
+                            </div>
+                    
+                            
+                            
+                        </div>
+                        <p class="slds-text-body_small" style="padding-top: 5px;">* Income and expense values displayed are exclusive of taxes.</p>
+                    </div>
+                    
+
+
+
+
+
+                </div>
+            </div>
+        
+            <!-- Top Expenses Chart -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-around_medium">
+                <div class="custom-card">
+                    <div class="card-header">
+                        <h2>Top Expenses</h2>
+                        <p style="padding-left: 10rem; margin-left:6rem;">This Fiscal Year</p>
+                        <lightning-icon icon-name="utility:chevrondown" size="xx-small" class="slds-m-right_medium my-icon" style="margin-right: 0px;"></lightning-icon>
+                        
+                    </div>
+                
+                    <div class="slds-grid slds-grid_align-space slds-p-around_medium static-chart-container">
+                        <!-- Pie Chart Section -->
+                        <div class="static-pie-chart-container">
+                            <div class="static-pie-chart"></div>
+                        </div>
+                    
+                        <!-- Legend Section -->
+                        <div class="legend">
+                            <ul>
+                                <li><span class="legend-color color-1"></span> Automobile Expense (44.62%)</li>
+                                <li><span class="legend-color color-2"></span> IT and Internet Expenses (18.66%)</li>
+                                <li><span class="legend-color color-3"></span> Cost of Goods Sold (12.78%)</li>
+                                <li><span class="legend-color color-4"></span> Consultant Expense (9.76%)</li>
+                                <li><span class="legend-color color-5"></span> Office Supplies (5.79%)</li>
+                                <li><span class="legend-color color-6"></span> Others (8.39%)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+
+
+
+
+        </lightning-card>
+        
+      </div>
+</div>
+
+    <!-- </div> -->
+
+    
+        <li class="slds-m-bottom_small menu-item active" data-name="Sales">
+          <div class="slds-grid" data-name="Sales">
+            <div class="slds-col slds-size_1-of-5">
+              <img class="menu-icon" src="/resource/1732882537000/Sk13__sales" alt="Sales">
+            </div>
+            <div class="slds-col slds-size_3-of-5">
+              <span class="text">Sales</span>
+            </div>
+            <div class="slds-col slds-size_1-of-5" align="right">
+              <lightning-icon icon-name="utility:right" class="slds-icon-utility-right slds-icon_container"></lightning-icon>
+            </div>
+          </div>
+          <ul>
+            <template for:each={submenuItems} for:item="item">
+              <li key={item.name} class="slds-m-bottom_small slds-m-top_small submenu-item" 
+                  onclick={handleSubItemClick} data-name={item.name}>
+                <div class="slds-grid">
+                  <div class="slds-col slds-size_1-of-5"></div>
+                  <div class="slds-col slds-size_3-of-5">
+                    <span class="sub-item">{item.name}</span>
+                  </div>
+                  <div class="slds-col slds-size_1-of-5"></div>
+                </div>
+              </li>
+            </template>
+          </ul>
+        </li>
+     
+      
+    
+
+</template>

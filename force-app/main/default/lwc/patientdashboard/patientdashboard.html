@@ -1,0 +1,97 @@
+<template>
+    <lightning-card title="Patient Details">
+        <div class="slds-grid slds-wrap slds-gutters">
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-p-around_small">
+                <lightning-card class="custom-card card-1" onclick={handleCardClick}>
+                    <div class="slds-card__body">
+                        <lightning-icon icon-name="standard:facility_bed" size="small" alternate="Hospital"></lightning-icon>
+                        <span class="cls-space">Doctors</span>
+                        <br><br>
+                        <div>Details</div><br>
+                    </div>
+                </lightning-card>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-p-around_small">
+                <lightning-card class="custom-card card-2" onclick={handleCardClick}>
+                    <div class="slds-card__body">
+                        <lightning-icon icon-name="standard:timeslot" size="small" alternate="Hospital"></lightning-icon>
+                        <span class="cls-space">Slots</span>
+                        <br><br>
+                        <div>Book Appointment</div><br>                     
+                        
+                    </div>
+                </lightning-card>
+            </div>
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-p-around_small">
+                <lightning-card class="custom-card card-3">
+                    <div class="slds-card__body">
+                        <lightning-icon icon-name="standard:case" size="small" alternate="Hospital"></lightning-icon>
+                        <span class="cls-space">Our Services</span>
+                        <br><br>
+                        <div>Here for your health</div><br>
+                       
+                    </div>
+                </lightning-card>
+            </div>
+        </div>
+
+        <!-- Display the doctors table -->
+        <template if:true={showDoctors}>
+            <lightning-card>
+                <div class="slds-card__header slds-grid doc-background-color">
+                    <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                        <div class="slds-media__body">
+                            <h2 class="slds-text-heading_small">Doctors List</h2>
+                        </div>
+                    </header>
+                </div>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="header-color" scope="col">
+                                <div class="slds-truncate" title="Name">Name</div>
+                            </th>
+                            <th class="header-color" scope="col">
+                                <div class="slds-truncate" title="Specialty">Specialty</div>
+                            </th>
+                            <th class="header-color" scope="col">
+                                <div class="slds-truncate" title="Slot">Department</div>
+                            </th>
+                            <th class="header-color" scope="col">
+                                <div class="slds-truncate" title="Slot">Slot</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={doctors} for:item="doctor">
+                            <tr key={doctor.Id}>
+                                <td>
+                                    <div class="slds-truncate" title={doctor.Name}>{doctor.Name}</div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate" title={doctor.Specialty__c}>{doctor.Specialty__c}</div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate" title={doctor.Slot__c}>{doctor.Department__c}</div>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </lightning-card>
+        </template>
+         <!-- Display the appointment form -->
+         <template if:true={showAppointmentForm}>
+            <lightning-card title="Book Appointment">
+                <div class="slds-p-around_medium">
+                    <lightning-input label="Appointment Name" placeholder="Enter appointment name" value={appointmentName} onchange={handleInputChange}></lightning-input>
+                    <lightning-combobox label="Doctor" placeholder="Select a Doctor" options={doctorOptions} value={selectedDoctor} onchange={handleDoctorChange}></lightning-combobox>
+                    <lightning-input label="Date" type="date" value={appointmentDate} onchange={handleInputChange}></lightning-input>
+                    <lightning-input label="Time" type="time" value={appointmentTime} onchange={handleInputChange}></lightning-input>
+                    <lightning-button label="Book" variant="brand" onclick={handleBookAppointment}></lightning-button>
+                </div>
+            </lightning-card>
+        </template>
+        
+    </lightning-card>
+</template>

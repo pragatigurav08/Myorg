@@ -1,0 +1,204 @@
+<apex:page renderAs="pdf" applyBodyTag="false" applyHtmlTag="false" showHeader="false" standardController="Opportunity" standardStylesheets="false">
+
+  <head>
+
+    <style type="text/css" media="print">
+
+       @page {
+
+            size: A3;
+            margin-top: 3cm;
+
+            margin-bottom: 3cm;
+
+            margin-left: 2.5cm;
+
+            margin-right: 1cm;
+
+            background: #FEFEF7;
+
+            @top-center {
+
+                content: element(header);
+
+            }
+
+            @bottom-right {
+
+                content: element(footer);
+
+            }
+
+		}
+
+    </style> 
+
+</head>
+
+    <p style="text-align:center;font-family: Arial, Helvetica, sans-serif;font-size:20px;">FI Report-Residence</p>
+ 
+    <div  style="margin-top:5px;">
+ 
+        <table border="border:1px solid black;border-collapse: collapse;" style="width:100%;">
+
+            <tr style="border:1px solid black;">
+
+                <td  style="font-family: Arial, Helvetica, sans-serif;width:8%;padding:5px;border:1px solid black;">FI Serial <br/> Number</td>
+
+                <td style="font-family: Arial, Helvetica, sans-serif;width:40%;padding:5px;border:1px solid black;" colspan="3">12345</td>
+
+                <td style="font-family: Arial, Helvetica, sans-serif;width:10%;padding:5px;border:1px solid black;">Date Of <br/>Submission</td>
+
+                <td style="font-family: Arial, Helvetica, sans-serif;width:30%;padding:5px;border:1px solid black;" colspan="3">01/01/2024</td>
+
+            </tr>
+ 
+            <tr>
+
+                <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;border:1px solid black;">Agency</td>
+
+                <td style="font-family: Arial, Helvetica, sans-serif;border:1px solid black;padding:5px;" colspan="3">ABC Agency</td>
+
+                <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;border:1px solid black;">Branch</td>
+
+                <td style="font-family: Arial, Helvetica, sans-serif;border:1px solid black;padding:5px;" colspan="3">Main Branch</td>
+
+            </tr>
+
+            <tr>
+
+                <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;border:1px solid black;">Customer <br/> Name</td>
+
+                <td style="font-family: Arial, Helvetica, sans-serif;border:1px solid black;padding:5px;" colspan="3">John Doe</td>
+
+                <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;border:1px solid black;">Contact No.</td>
+
+                <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;border:1px solid black;" colspan="3">123-456-7890</td>
+
+            </tr>
+
+            <tr>
+
+            <td style="padding:5px;border:1px solid black;">Address</td>
+
+                <td style="font-family: Arial, Helvetica, sans-serif;width:80%;padding:5px;border:1px solid black;" colspan="7">123 Main St, Apt 4B</td>
+
+            </tr>
+
+            <tr>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;border:1px solid black;">State</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;width:12%;padding:5px;border:1px solid black;">California</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif; width:10%;padding:5px;border:1px solid black;">City</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif; width:30%;padding:5px;border:1px solid black;" colspan="3">Los Angeles</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;width:12%;padding:5px;border:1px solid black;">Pincode</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;width:12%;padding:5px;border:1px solid black;">90001</td>
+
+            </tr>
+
+            <tr> 
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;border:1px solid black;">Landmark</td>
+
+                <td style="font-family: Arial, Helvetica, sans-serif;border:1px solid black;" colspan="7">Near Central Park</td>
+
+            </tr>
+
+        </table>   
+
+    </div>
+
+  <div style="margin-top:20px;width:100%;">
+
+      <table border="border:1px solid black;border-collapse: collapse;" style="width:100%;">
+
+            <tr>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;">Address Check Done</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;">Yes</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;">Locating Address</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;">Easy</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;">Occupied Size</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;">2 years</td>
+
+            </tr>
+
+            <tr>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;">Address Type</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;">Residential</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;" colspan="4" rowspan="2"></td>
+
+            </tr>
+
+            <tr>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;">Family Members</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;">4</td>              
+
+            </tr>
+
+            <tr>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;">Adults</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;">2</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;">Children</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;">2</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;">Earning Members</td>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;">1</td>
+
+            </tr>
+
+            <tr>
+
+              <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:17%;border:1px solid black;">Profession</td>
+
+                <td style="font-family: Arial, Helvetica, sans-serif;padding:5px;width:80%;border:1px solid black;" colspan="5">Software Engineer</td>
+
+            </tr>
+
+      </table>      
+
+    </div>
+ 
+    <div style="margin-top:20px;width:100%;">
+
+      <p style="font-family: Arial, Helvetica, sans-serif;padding:5px;"><b>TCP:::</b></p>
+
+      <table border="border:1px solid black;border-collapse: collapse;" style="width:100%;">
+
+        <tr>
+
+          <td style="border:1px solid black;width:25%;font-family: Arial, Helvetica, sans-serif;padding:5px;">Name</td>
+
+          <td style="border:1px solid black;width:25%;font-family: Arial, Helvetica, sans-serif;padding:5px;">Jane Doe</td>
+
+          <td style="border:1px solid black;width:25%;font-family: Arial, Helvetica, sans-serif;padding:5px;">Neighbour Check</td>
+
+          <td style="border:1px solid black;width:25%;font-family: Arial, Helvetica, sans-serif;padding:5px;">Positive</td>
+
+        </tr>
+
+                      </table>
+
+    </div>
+ 
+</apex:page>

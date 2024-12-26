@@ -1,0 +1,57 @@
+<template>
+    <lightning-card>
+    <div class="slds-col slds-size_2-of-12 slds-scrollable_y sidebar-container">
+        <!-- Sidebar -->
+        <ul class={sideMenuClass}>
+            <template for:each={sideMenu} for:item="menuItem">
+                <li 
+                    key={menuItem.name} 
+                    class="menu-item slds-m-bottom_small" 
+                    onmouseover={handleHover} 
+                    onmouseout={handleHoverOut}
+                >
+                    <!-- Menu Item -->
+                    <div class="slds-grid menu-item-container" onclick={handleMenuClick} data-name={menuItem.name}>
+                        <!-- Icon Column -->
+                        <div class="slds-col slds-size_1-of-5">
+                            <img src={menuItem.iconName} alt={menuItem.name} class="menu-icon" />
+                        </div>
+                        <!-- Name Column -->
+                        <div class="slds-col slds-size_3-of-5">
+                            <span class="menu-text">{menuItem.name}</span>
+                        </div>
+                        <!-- Dropdown Indicator -->
+                        <div class="slds-col slds-size_1-of-5" if:true={menuItem.subMenu.length} align="right">
+                            <!-- <lightning-icon 
+                                icon-name={menuItem.iconNaame || 'utility:right'} 
+                                size="xx-small">
+                            </lightning-icon> -->
+                        </div>
+                    </div>
+
+                    <!-- Sub-menu -->
+                    <template if:true={menuItem.isExpanded}>
+                        <ul class="submenu">
+                            <template for:each={menuItem.subMenu} for:item="subMenuItem">
+                                <li 
+                                    key={subMenuItem.name} 
+                                    class="submenu-item slds-m-bottom_small slds-m-top_small"
+                                    onmouseover={handleHover} 
+                                    onmouseout={handleHoverOut}
+                                >
+                                    <span class="submenu-text">{subMenuItem.name}</span>
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                </li>
+            </template>
+        </ul>
+
+        <!-- Chevron icon at bottom -->
+        <div class="center-icon chevron-bottom" onclick={toggleSidebarWidth}>
+            <lightning-icon icon-name="utility:chevronleft" alternative-text="Toggle Sidebar" size="small"></lightning-icon>
+        </div>
+    </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,49 @@
+<apex:page applyBodyTag="false" applyHtmlTag="false" showHeader="false"  standardStylesheets="false">
+       <head>
+    <style type="text/css" media="print">
+    </style> 
+           <apex:pageBlock >
+               
+            <apex:pageBlockSection title="Lead Type/Source Information" columns="2">
+                <table>
+                    <tr>
+                    <td>Customer Type</td>
+                    <td  style="width:50px;border:1px solid black;"> </td>
+                    </tr>                  
+                   <tr>
+                   <td>Lead Source</td>
+                  <td  style="width:50px;border:1px solid black;"> </td>
+                    </tr>
+                </table>
+                <apex:pageBlockSectionitem >
+                    <table>
+                    <tr>
+                    <td>Phone</td>
+                    <td  style="width:50px;border:1px solid black;"> </td>
+                    </tr>                  
+                   <tr>
+                   <td>Lead Source</td>
+                  <td  style="width:50px;border:1px solid black;"> </td>
+                    </tr>
+                </table>
+                </apex:pageBlockSectionitem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Contact Information" columns="2">
+               <table>
+                   <tr>
+                       <td>Situation</td>
+                       <td  style="width:50px;border:1px solid black;"> </td>
+                   </tr>
+                   <tr>
+                       <td>First Name</td>
+                      <td  style="width:50px;border:1px solid black;"> </td>
+                   </tr>
+                   <tr>
+                       <td>Last Name</td>
+                       <td  style="width:50px;border:1px solid black;"> </td>
+                   </tr>
+                </table>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+       </head>
+</apex:page>

@@ -1,0 +1,13 @@
+.white-utility-icon{
+    --sds-c-icon-color-foreground-default: white;
+}
+.number{
+color: red;
+padding-left: 35px;
+}
+.img1{
+    width: 60px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 10px;
+}

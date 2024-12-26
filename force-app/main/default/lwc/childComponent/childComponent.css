@@ -1,0 +1,9 @@
+.high-percentage {
+    color: green;
+    font-weight: bold;
+}
+
+.low-percentage {
+    color: red;
+    font-weight: bold;
+}

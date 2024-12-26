@@ -1,0 +1,577 @@
+/*  */
+.tab-column-collapsed {
+    width: 40px;
+}
+
+.slds-m-around_medium {
+    transition: width 0.3s ease; /* Smooth transition for width change */
+}
+
+/*  */
+/* Styling for Sidebar */
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7fe;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-menu {
+  flex: 1; /* Makes the menu take up all available space */
+  overflow-y: auto; /* Ensures scrolling for the menu items */
+}
+
+.center-icon{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px; /* Adjust height as needed */
+  background-color: #f7f7fe; /* Matches the sidebar background */
+  position: sticky;
+  bottom: 0; /* Sticks to the bottom of the sidebar */
+  z-index: 1; /* Ensures it stays above other elements if needed */
+}
+.chevron-bottom{
+    position: fixed;
+    height: 35px;
+    bottom: 0;
+    width: 248px;
+    border-right: 1px solid #e4e4e4;
+    cursor: pointer;
+}
+
+.menu-item {
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect */
+  .menu-item:hover {
+    background-color: #e6e6ff; /* Light blue on hover */
+  }
+  
+  /* Active menu item styling */
+  .menu-item.active {
+    background-color: #0070d2; /* Salesforce blue for active */
+    color: white; /* Ensure text is visible */
+  }
+  
+  .menu-item.active .text {
+    color: white;
+  }
+  
+  
+/* hover */
+.subitemText{
+    font-size: 14px;
+    font-family: Arial;
+}
+.sidebar {
+    background-color: #f4f6f9;
+    min-width: 200px;
+    max-width: 200px;
+    height: 100vh;
+    overflow-y: auto;
+    border-right: 1px solid #d8dde6;
+}
+
+.menu-item {
+    margin-bottom: 10px;
+}
+
+.icon {
+    fill: #54698d;
+}
+
+/* Main Content Styling */
+.main-content {
+    flex: 1;
+    overflow: hidden;
+}
+
+.slds-scrollable_x {
+    overflow-x: auto;
+}
+
+.slds-scrollable_y {
+    overflow-y: auto;
+    height: calc(100vh - 40px); 
+     
+}
+
+/* Styling for Lightning Cards */
+.card {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.card p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.slds-progress-bar__value {
+    background-color: #28b62c;
+}
+
+
+li.menu-item.home{
+    background-color: #268ddd;
+}
+
+lightning-tab {
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+}
+
+.slds-card__header.slds-grid {
+    padding-top: 0px;
+}
+
+.slds-card__body {
+    margin-top: 0px;
+}
+
+.slds-grid.slds-p-horizontal_medium.slds-p-vertical_small.slds-align_absolute-center {
+    border-bottom: 1px solid #8080807d;
+    background: #f9f9fb;
+    border-radius: 10px 10px 0px 0px;
+       
+    
+}
+
+.slds-card__header.slds-grid {
+    padding-top: 0px !important;
+}
+
+.slds-p-around_medium .tbills{
+    border-bottom: 1px solid #8080807d !important;
+}
+
+.slds-card__body {
+    margin-top: 0px !important;
+}
+/*****************Krat********************* */
+
+.slds-tabs_default__item.slds-active:after, .slds-tabs_default__item.slds-is-active:after, .slds-tabs--default__item.slds-active:after, .slds-tabs--default__item.slds-is-active:after {
+    background-color: #268ddd !important;
+    height: calc(var(--slds-c-tabs-list-sizing-border, var(--sds-c-tabs-list-sizing-border, var(--lwc-borderWidthThin,1px))) + 2px);
+}
+a.slds-text-link {
+    color: #000000d9 !important;
+}
+
+.current {
+    color: #0070D2;
+}
+
+.overdue {
+    color: #D72D30;
+    padding: 20px;
+}
+
+.currenttext .overdu
+{
+   
+    font-size: 19px !important;
+    
+}
+
+p.currenttext.overdu {
+    padding-left: 20px;
+}
+
+p.currenttext.overdu {
+    color: black !important;
+    font-size: 20px;
+    font-weight: normal !important;
+}
+
+.currenttext
+{
+    color: black !important;
+    font-size: 20px;
+    font-weight: normal !important;
+}
+
+
+.custom-icon-container {
+    display: inline-block;
+    background-color: #0070d2 !important; /* Salesforce blue */
+    border-radius: 50% !important; /* Makes the background circular */
+    padding: 4px; /* Adds spacing around the icon */
+    line-height: 0; /* Ensures tight alignment */
+}
+
+.custom-icon-container lightning-icon {
+    fill: white /* Changes the icon color to white */
+}
+
+
+/******************************** */
+
+:host {
+    display: block;
+}
+.custom-card {
+    background-color: #ffffff;
+    border: 1px solid #d8dde6;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f3f3f3;
+    border-bottom: 1px solid #d8dde6;
+}
+
+.card-header h2 {
+    font-size: 1rem;
+    color: #0f0f0f;
+    margin: 0;
+}
+/*  
+.static-bar-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 200px;
+    padding: 10px;
+}
+
+.bar {
+    width: 6%;
+    background: #4caf50;
+    color: white;
+    text-align: center;
+    margin: 0 2px;
+    font-size: 12px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    border-radius: 2px;
+}*/
+
+/* Container holding Y-axis labels and bar chart */
+.chart-container {
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+    border-bottom: 1px solid #e3e1e1;
+}
+
+/* Y-axis Labels */
+.y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 200px;
+    margin-right: 15px;
+    font-size: 12px;
+    color: #333;
+}
+
+/* Bar Chart Container */
+.static-bar-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    height: 200px;
+    width: 100%;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+
+.bar-group {
+    flex-direction: column;
+    align-items: center;
+    width: 6%;
+}
+
+.bar {
+    width: 45%;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.accrual-bar {
+    background: #4caf50;
+}
+
+.cash-bar {
+    background: #f44336;
+}
+
+.month {
+    font-size: 10px;
+    color: #333;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.static-bar-chart .bar-group .bar {
+    position: relative;
+}
+
+
+
+.menu-icon {
+    width: 27px; 
+    height: 24px; 
+  }
+  .text{
+    font-size: 14px;
+    padding-top: 2px;
+    font-family: Arial;
+}
+.bar:nth-child(2n) {
+    background: #f44336;
+}
+
+.static-chart-container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+    height: 21rem;
+}
+
+/* Pie Chart */
+.static-pie-chart-container {
+    flex: 0 0 auto;
+}
+
+.static-pie-chart {
+    width: 180px;
+    height: 180px;
+    background: conic-gradient(
+        #4caf50 0% 44.62%,
+        #f44336 44.62% 63.28%,
+        #2196f3 63.28% 76.06%,
+        #ff9800 76.06% 85.82%,
+        #673ab7 85.82% 91.61%,
+        #00bcd4 91.61% 100%
+    );
+    border-radius: 50%;
+}
+
+.legend {
+    flex: 1; 
+   
+}
+
+.legend ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.legend li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 0.75rem;
+    
+}
+
+/* Legend Color Box */
+.legend-color {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    margin-right: 8px;
+    border-radius: 50%;
+}
+
+.legend-item {
+    display: inline-block;
+    width: 22px;
+    height: 7px;
+    margin-right: 8px;
+    border-radius: 20%;
+}
+
+/* Colors for legend */
+.color-1 {
+    background: #4caf50;
+}
+.color-2 {
+    background: #f44336;
+}
+.color-3 {
+    background: #2196f3;
+}
+.color-4 {
+    background: #ff9800;
+}
+.color-5 {
+    background: #673ab7;
+}
+.color-6 {
+    background: #00bcd4;
+}
+
+
+.slds-col.slds-size_2-of-12.slds-scrollable_y {
+    scrollbar-width: thin !important;
+}
+
+.my-icon {
+    --slds-c-icon-color-foreground-default: blue;
+}
+.static-label-container {
+    display: inline-flex;
+    border: 1px solid #d8dde6;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.static-label {
+    font-size: 0.75rem; 
+    color: #333;
+    background-color: #c5c5c5;
+    padding: 0.25rem 0.5rem; 
+    text-align: center;
+    border-right: 1px solid #d8dde6;
+}
+.static-label1 {
+    font-size: 0.75rem; 
+    color: #333;
+    background-color: #f4f6f9;
+    padding: 0.25rem 0.5rem; 
+    text-align: center;
+    border-right: 1px solid #d8dde6;
+}
+
+.static-label:last-child {
+    border-right: none; 
+}
+
+.text-font{
+    font-size: large;
+    color: black;
+}
+
+.Add_image{
+    height: 15px;
+    margin-bottom: 1px;
+}
+.add-icon{
+    border-left: 1px solid gray;
+    height: 31px;
+    width: 32px;
+    padding-top: 3px;
+    padding-left: 3px;
+    background-color: #5494ee;
+    --slds-c-icon-color-foreground-default: rgb(231, 231, 231);
+}
+
+/****************pragati css************** */
+/* pragati added code */
+
+/* Header container */
+.custom-header {
+    background-color: #1e2136; 
+    color: #ffffff; 
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding-top: 0px;
+    padding-left: 5px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+}
+
+/* Left section - Logo Icon */
+.logo-icon {
+    fill: white;
+}
+
+.white-utility-icon {
+    color: white;
+    background-color: #1e2136;
+    --slds-c-icon-color-foreground-default: rgb(231, 231, 231);
+}
+
+/* Center section layout with Recent Activities icon and search */
+.center-section {
+    display: flex;
+    align-items: center; 
+}
+
+/* Styling for the search input */
+.search-input {
+    min-width: 300px;
+    border-radius: 8px;
+    bottom: 8px;
+    color: white;
+    --slds-c-input-color-background:#2c3154;
+    ;
+}
+
+/* Right section - Organization text */
+.organization-text {
+    font-size: 14px;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+/* Static Organization Name */
+.org-text {
+    font-size: 15px;
+    color: #ffffff;
+    margin-right: 3px;
+    padding-bottom: 4px
+}
+
+/* Button Styling */
+.add-button {
+    background-color: #007bff; 
+    border-radius: 50%;
+}
+
+/* Profile Section Styling */
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Profile Image Styling */
+.profile-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+.logo-image {
+    width: 25px; 
+    height: 25px;
+    margin-left: 8px;
+    object-fit: contain; 
+}
+.books-title {
+    font-size: 18px; /* Font size set to 25px */
+    color: white;
+    margin-left: 9px;
+}
+
+.slds-icon svg {
+    fill: white !important;
+    color: white !important;
+}
+
+
+/****************pragati css end************** */

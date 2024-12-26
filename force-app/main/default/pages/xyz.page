@@ -1,0 +1,146 @@
+<apex:page renderAs="pdf" applyBodyTag="false" applyHtmlTag="false" showHeader="false" standardController="Opportunity" standardStylesheets="false">
+
+
+<head>
+   
+        <style type="text/css" media="print">
+
+       @page {
+
+            size: A3;
+            margin-top: 3cm;
+
+            margin-bottom: 3cm;
+
+            margin-left: 2.5cm;
+
+            margin-right: 1cm;
+
+            background: #FEFEF7;
+
+            @top-center {
+
+                content: element(header);
+
+            }
+
+            @bottom-right {
+
+                content: element(footer);
+
+            }
+
+		}
+
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .header {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">FI Report-Residence</div>
+    <table>
+        <tr>
+            <td>FI Serial Number</td>
+            <td colspan="2"></td>
+            <td>Date Of Submission</td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td>Agency</td>
+            <td colspan="2"></td>
+            <td>Branch</td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td>Customer Name</td>
+            <td colspan="2"></td>
+            <td>Contact No.</td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td colspan="5"></td>
+        </tr>
+        <tr>
+            <td>State</td>
+            <td></td>
+            <td>City</td>
+            <td></td>
+            <td>Pincode</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Landmark</td>
+            <td colspan="5"></td>
+        </tr>
+        <tr>
+            <td>Address Check Done</td>
+            <td colspan="5"></td>
+        </tr>
+        <tr>
+            <td>Locating Address</td>
+            <td></td>
+            <td>Easy</td>
+            <td></td>
+            <td >Occupied Size</td>
+            <td colspan="2"></td>
+        </tr>
+        <tr>
+            <td>Address Type</td>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <td>Family Members</td>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <td>Adults</td>
+            <td>Children</td>
+            <td colspan="2">Earning Members</td>
+        </tr>
+        <tr>
+            <td>Profession</td>
+            <td colspan="3"></td>
+        </tr>
+        <tr>
+            <th colspan="4">TCP:::</th>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td colspan="2">Neighbour Check</td>
+            <td>Positive</td>
+        </tr>
+        <tr>
+            <td colspan="4">Remarks</td>
+        </tr>
+        <tr>
+            <th colspan="4">Additional Remarks:::</th>
+        </tr>
+        <tr>
+            <td colspan="2">FI Remarks</td>
+            <td>FI Recommandation</td>
+            <td>Reject Reason</td>
+        </tr>
+        <tr>
+            <td colspan="4">Verifier Name: Rahul Joshi</td>
+        </tr>
+    </table>
+</body>
+    </apex:page>

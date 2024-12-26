@@ -1,0 +1,9 @@
+.view{
+    background-color: blueviolet;
+    width: 38rem;
+    margin-left: 12rem;
+}
+.gridAllignment{
+    height: 2rem;
+    border-bottom: 1px solid black;
+}
